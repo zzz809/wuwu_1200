@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1200px, initial-scale=1.0">
+  <title>个人主页 | 小红书博主呜呜的网站</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/clock.css">
+  <link rel="stylesheet" href="css/daohang.css">
+  <link rel="stylesheet" href="css/intro1.css">
+  <link rel="stylesheet" href="css/intro2.css">
+  <link rel="stylesheet" href="css/divide.css">
+  <link rel="stylesheet" href="css/sort.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/school.css">
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <nav class="nav-bar">
+    <div class="personal-info">
+      <span class="platform-name">小红书</span>
+      <span class="username">| 呜呜</span>
+    </div>
+    <span class="welcome-text">欢迎来到呜呜的主页</span>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索...">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7f8c8d">
+        <path d="M15.5 15.5L19 19M5 11a6 6 0 1 0 12 0 6 6 0 0 0-12 0z"/>
+      </svg>
+    </div>
+  </nav>
+  <div class="maincontent_80px">
+    <!-- 时间模块 -->
+<div class="time-card">
+  <div class="time-header">
+    🕒 当前时间
+    <span class="live-indicator">LIVE</span>
+  </div>
+    <div id="realtime-clock" class="time-display">
+      <span class="date-part">2025/03/04</span>
+      <span class="time-part">14:23:45</span>
+      <span class="week-part">星期三</span>
+    </div>
+  </div>
+</div>
+<!-- 个人介绍部分_基础信息 -->
+<div class="mm-profile-container">
+  <!-- 左侧信息栏 -->
+  <div class="mm-profile-sidebar">
+      <div class="mm-avatar-section">
+          <img src="./images/intro.jpg" alt="用户头像" class="mm-user-avatar">
+          <div class="mm-user-info">
+              <h1 class="mm-username">呜呜</h1>
+              <!--暂时隐藏V标志
+              <div class="mm-verified-badge">
+                  <span class="mm-v-icon">V</span>
+                  认证
+              </div>
+              -->
+          </div>
+      </div>
+  </div>
+
+  <!-- 分隔线 -->
+  <div class="mm-divider"></div>
+
+  <!-- 右侧内容区 -->
+  <div class="mm-profile-content">
+      <!-- 联系我标题 -->
+      <div class="mm-contact-header">
+          <span class="mm-contact-icon">📨</span>
+          <h2>联系我</h2>
+      </div>
+
+      <div class="mm-info-grid">
+        <!-- 小红书 -->
+        <a href="https://www.xiaohongshu.com/user/profile/61e4349b000000002102a5c1" 
+           target="_blank" 
+           class="mm-info-card mm-info-card-link">
+            <span class="mm-info-icon">📌</span>
+            <div class="mm-info-content">
+                <div class="mm-info-title">小红书</div>
+                <div class="mm-info-value">@呜呜</div>
+            </div>
+        </a>
+    
+        <!-- 电子邮箱 -->
+        <a href="mailto:ft2023@126.com" 
+           class="mm-info-card mm-info-card-link">
+            <span class="mm-info-icon">📧</span>
+            <div class="mm-info-content">
+                <div class="mm-info-title">电子邮箱</div>
+                <div class="mm-info-value">ft2023@126.com</div>
+            </div>
+        </a>
+    
+        <!-- 个人主页 -->
+        <a href="https://zzz809.github.io/wuwu" 
+           target="_blank" 
+           class="mm-info-card mm-info-card-link">
+            <span class="mm-info-icon">🌐</span>
+            <div class="mm-info-content">
+                <div class="mm-info-title">个人主页</div>
+                <div class="mm-info-value">https://zzz809.github.io/wuwu</div>
+            </div>
+        </a>
+    
+        <!-- QQ -->
+        <a href="https://qm.qq.com/q/5paDenVfoI" 
+           target="_blank" 
+           class="mm-info-card mm-info-card-link">
+            <span class="mm-info-icon">🐧</span>
+            <div class="mm-info-content">
+                <div class="mm-info-title">QQ号码</div>
+                <div class="mm-info-value">718123472</div>
+            </div>
+        </a>
+    </div>
+  </div>
+</div>
+<!-- 个人介绍部分_学校、奖项信息等 -->
+   <!-- 按钮 -->
+<section class="profile-section">
+  <div class="profile-section__btns">
+      <button class="profile-section__btn profile-section__btn--active" data-section="edu">教育背景</button>
+      <button class="profile-section__btn" data-section="award">奖励奖项</button>
+  </div>
+    <!-- 具体内容 -->
+  <div class="profile-section__divider"></div>
+  <div id="profile-edu" class="profile-section__content profile-section__content--active">
+      <div class="profile-section__item">
+        <h3 class="h3_tem">中南大学</h3>
+          <p class="h3p_tem">2021-2025 · 本科 · 大四在读</p>
+      </div>
+  </div>
+
+  
+
+  <div id="profile-award" class="profile-section__content">
+      <div class="profile-section__item">
+        <h3 class="h3_tem">中南大学2025届优秀毕业生</h3>
+      </div>
+      <div class="profile-section__item">
+        <h3 class="h3_tem">2024年度国家级奖学金</h3>
+    </div>
+    <div class="profile-section__item">
+        <h3 class="h3_tem">中南大学优秀学生（连续3学年，2021-2024）</h3>
+    </div>
+    <div class="profile-section__item">
+        <h3 class="h3_tem">中南大学一等奖学金（2次）、二等奖学金（1次）</h3>
+    </div>
+    <div class="profile-section__item">
+      <h3 class="h3_tem">湖南省大学生创新训练项目优秀结题（项目负责人）</h3>
+    </div>
+    <div class="profile-section__item">
+      <h3 class="h3_tem">2023年高教杯全国大学生数学建模竞赛全国二等奖（湖南省一等奖）</h3>
+    </div>
+  </div>
+</section>
+<!-- 个人介绍部分_学校、奖项信息等部分结束 -->
+
+
+
+ <!-- 红色分割线 -->
+ <div class="divider-container">
+  <div class="red-divider"></div>
+</div>
+
+ <!-- 分类导航 -->
+ <div class="categories">
+  <button class="category active" data-category="all">全部</button>
+  <button class="category" data-category="benke">本科经验</button>
+  <button class="category" data-category="baoyan">保研经验</button>
+  <button class="category" data-category="xuexi">学习资料</button>
+  <button class="category" data-category="other">其他</button>
+</div>
+<!-- 在post-list上方添加排序控件 -->
+    <div class="sort-wrapper">
+        <button class="sort-btn active" data-order="desc">
+            <span class="icon">↓</span>
+            <span class="text">最新优先</span>
+        </button>
+        <button class="sort-btn" data-order="asc">
+            <span class="icon">↑</span>
+            <span class="text">旧文优先</span>
+        </button>
+    </div>
+</div>
+<!-- 内容区域 -->
+<main class="content" >
+  <div class="post-list" data-category="other">
+
+    <article class="post-item" data-category="other" onclick="window.open('pages/post1.html', '_blank')">
+      <div class="post-date">2025-03-04</div>
+      <h2>中南大学介绍（测试网页）</h2>
+      <p class="post-excerpt">中南大学由原湖南医科大学、长沙铁道学院...</p>
+    </article>
+  
+    <article class="post-item" data-category="baoyan"  onclick="window.open('pages/post2.html', '_blank')">
+      <div class="post-date">2025-03-06</div>
+      <h2>2026届夏令营申请材料全攻略：5大核心模块+18项精细化清单（附时间管理建议）</h2>
+      <p class="post-excerpt">进入3月保研黄金筹备期，针对2026届保研er的夏令营大战即将拉开帷幕...</p>
+    </article>
+</main>
+
+
+  <!-- 底部版权 -->
+  <footer class="footer">
+    <p>版权所有 © 小红书博主呜呜 2023-2025 All Rights Reserved QQ号718123472 邮箱ft2023@126.com</p>
+    <p>本网站为个人网站，仅供交流学习使用！</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/sort.js"></script>
+  <script src="js/school.js"></script>
+
+</body>
+</html>
