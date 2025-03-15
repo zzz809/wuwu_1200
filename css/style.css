@@ -277,6 +277,17 @@ body::after {
   padding: 1.5rem;
   margin-top: auto;
 }
+  /* 设置 footer 内所有超链接的样式 */
+  .footer a {
+    color: white; /* 超链接字体颜色为白色 */
+    text-decoration: none; /* 去掉下划线 */
+    margin: 0 10px; /* 超链接之间的间距 */
+  }
+
+  /* 设置鼠标悬停时超链接的样式 */
+  .footer a:hover {
+    color: #ccc; /* 鼠标悬停时字体颜色变为浅灰色 */
+  }
 
 .contact-info {
   margin-top: 0.5rem;
@@ -384,6 +395,7 @@ body::after {
 .category:active {
   animation: buttonScale 0.3s ease;
 }
+
 
 /* 打印专用样式（不溢出屏幕） */
 @media print {
