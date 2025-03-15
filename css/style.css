@@ -385,26 +385,43 @@ body::after {
   animation: buttonScale 0.3s ease;
 }
 
-
 /* 打印专用样式（不溢出屏幕） */
 @media print {
-  body {
-    min-width: auto !important;  /* 解除固定宽度限制 */
-    width: 100% !important;      /* 适应纸张宽度 */
-    display: block !important;   /* 禁用Flex布局 */
-    background: white !important;/* 强制白底节省墨水 */
-    color: black !important;     /* 确保文字可读性 */
-    font-size: 12pt !important;  /* 标准打印字号 */
-    padding: 10mm !important;    /* 预留装订边距 */
+  @page {
+    size: auto;        /* 自动适应纸张尺寸 */
+    margin: 0;         /* 完全消除默认页边距 */
   }
 
-  /* 隐藏无需打印的元素 */
+  body {
+    min-width: auto !important;
+    width: 100% !important;
+    margin: 0 !important;       /* 消除内容边距 */
+    display: block !important;
+    font-size: 12pt !important;
+    -webkit-print-color-adjust: exact; /* 强制显示颜色 */
+    color-adjust: exact;        /* 标准属性 */
+  }
+
+  /* 隐藏非必要元素 */
   .no-print {
     display: none !important;
   }
 
-  /* 防止内容被切割 */
+  /* 分页优化 */
   .print-section {
     page-break-inside: avoid;
+  }
+
+  /* 允许分页 */
+  html, article {
+    page-break-before: auto;
+    page-break-after: auto;
+  }
+
+  /* 保证页眉页脚内容可见 */
+  header, footer {
+    display: block !important;
+    position: static;
+    background: inherit;
   }
 }
