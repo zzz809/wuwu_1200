@@ -1,0 +1,185 @@
+.download-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 14px;
+    padding: 10px 15px;
+    box-shadow: 0 6px 18px rgba(255, 59, 48, 0.06);
+    border: 1px solid rgba(255, 59, 48, 0.08);
+}
+
+.list-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    position: relative;
+    display: inline-block;
+    color: var(--primary-red);
+}
+
+.list-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        rgba(255, 59, 48, 0.3) 0%, 
+        rgba(255, 59, 48, 0.15) 100%);
+    border-radius: 2px;
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-item {
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin: 6px 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background: rgba(255, 59, 48, 0.02);
+    border: 1px solid rgba(255, 59, 48, 0.05);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.file-item:hover {
+    transform: translateX(8px);
+    background: linear-gradient(90deg, 
+        rgba(255, 59, 48, 0.05) 0%, 
+        rgba(255, 255, 255, 0) 100%);
+    border-color: rgba(255, 59, 48, 0.2);
+    box-shadow: 4px 4px 16px rgba(255, 59, 48, 0.1);
+}
+
+.file-item:hover .file-number {
+    background: rgba(255, 59, 48, 0.12);
+    transform: scale(1.05);
+}
+
+.file-item:hover .file-name::before {
+    background: #FF1A1A;
+    height: 20px;
+}
+
+/* 点击下载提示 */
+.file-item::before {
+    content: "点击下载";
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: rgba(255, 59, 48, 0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.file-item:hover::before {
+    opacity: 1;
+    right: 60px;
+    color: #FF1A1A;
+}
+
+/* 箭头样式 */
+.file-item::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF3B30" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm3.7 10.7-4 4a1 1 0 0 1-1.4-1.4l2.3-2.3H7a1 1 0 1 1 0-2h5.6l-2.3-2.3a1 1 0 1 1 1.4-1.4l4 4a1 1 0 0 1 0 1.4z"/></svg>');
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.file-item:hover::after {
+    opacity: 1;
+    transform: translateX(6px) scale(1.15);
+    filter: drop-shadow(0 2px 4px rgba(255, 59, 48, 0.2));
+}
+
+.file-number {
+    min-width: 70px;
+    font-size: 16px;
+    padding: 4px 8px;
+    background: rgba(255, 59, 48, 0.08);
+    border-radius: 4px;
+    margin-right: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+.file-name {
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    position: relative;
+    padding-left: 12px;
+    color: var(--text-primary);
+    flex-grow: 1;
+}
+
+.file-name::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 16px;
+    background: var(--primary-red);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+/* 点击反馈 */
+.file-item:active {
+    transform: translateX(8px) scale(0.98);
+    transition: all 0.15s;
+}
+
+/* 新增文件类型样式 */
+.file-type {
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 12px;
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--primary-red);
+    border: 1px solid rgba(255, 59, 48, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* 不同类型颜色区分 */
+.file-type[data-type="pdf"] {
+    background: rgba(255, 59, 48, 0.1);
+    color: #FF3B30;
+}
+.file-type[data-type="docx"] {
+    background: rgba(33, 150, 243, 0.1);
+    color: #2196F3;
+}
+.file-type[data-type="xlsx"] {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+.file-type[data-type="zip"] {
+    background: rgba(255, 152, 0, 0.1);
+    color: #FF9800;
+}
+
+/* 调整原有布局 */
+.file-name {
+    max-width: 70%; /* 防止被挤出 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
