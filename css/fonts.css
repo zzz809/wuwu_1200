@@ -270,7 +270,6 @@ h3.h3_qa + p.answer-text {
   /* ================= 打印优化 ================= */
   @media print {
     h2.h2_tem1 {
-      background: none !important;
       border-left: 3px solid #FF2442 !important;
       box-shadow: none !important;
       color: #444 !important;
