@@ -206,14 +206,6 @@ body::after {
       color: #FF99B3;
   }
 }
-@media print {
-  /* 专业级打印隐藏方案 */
-  .nav-bar {
-    position: static !important;
-    z-index: -9999 !important;
-  }
-}
-
 .post-title {
   /* 布局定位 */
   position: relative;
@@ -399,6 +391,13 @@ body::after {
 
 /* 打印专用样式（不溢出屏幕） */
 @media print {
+  .nav-bar {
+    position: static !important;
+    z-index: -9999 !important;
+  }
+  .maincontent_80px {
+    padding-top: 0 !important;
+}
   @page {
     size: auto;        /* 自动适应纸张尺寸 */
     margin: 0;         /* 完全消除默认页边距 */
