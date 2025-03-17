@@ -264,7 +264,38 @@ h3.h3_qa + p.answer-text {
   background: linear-gradient(to right, #FFF9FA 10px, transparent 10px);
 }
 
+.h3_person{
+  font-family: 
+  'MyTimes',
+  'Times New Roman',
+  'MyHeiti',         /* 自定义字体 */
+  '黑体',               /* Windows系统字体 */
+  'SimHei',           /* macOS系统字体 */
+  'STSimhei',         /* 其他系统变体 */
+  serif;                /* 通用衬线字体 */
+  line-height: 1.6;
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  font-weight: normal;        /* 强制取消加粗 */
+  font-synthesis: none;      /* 禁止浏览器合成粗体 */
+}
 
+.h3p_person{
+    font-family: 
+    'MyTimes',
+    'Times New Roman',
+    'MyFangSong',         /* 自定义字体 */
+    '仿宋',               /* Windows系统字体 */
+    'FangSong',           /* macOS系统字体 */
+    'STFangsong',         /* 其他系统变体 */
+    serif;                /* 通用衬线字体 */
+  line-height: 1.6;
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  text-indent: 2em; /* 首行缩进2字符 */
+  }
 
 
   /* ================= 打印优化 ================= */
