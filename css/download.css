@@ -47,6 +47,9 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    text-decoration: none !important; /* 禁用下划线 */
+    color: inherit !important; /* 继承父级文字颜色 */
+    outline: none; /* 去除点击时的虚线边框 */
 }
 
 .file-item:hover {
@@ -88,7 +91,10 @@
     right: 60px;
     color: #FF1A1A;
 }
-
+/* 处理已访问状态 */
+.file-item:visited {
+    color: inherit !important; 
+  }
 /* 箭头样式 */
 .file-item::after {
     content: "";
