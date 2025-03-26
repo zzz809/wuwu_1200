@@ -833,7 +833,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "./document_pdf_1001_start/1004.pdf",//修改pdf的话主要修改这里就可以了
+    value: "./document_pdf_1001_start/20250326-集成电路专业夏令营和预推免部分高校重要时间点参考_小红书呜呜.pdf",//修改pdf的话主要修改这里就可以了
     kind: OptionKind.VIEWER
   };
   defaultOptions.sandboxBundleSrc = {
