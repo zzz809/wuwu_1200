@@ -192,12 +192,8 @@
         padding-left: 2.8em;  /* 优化左侧空间 */
     }
 
-    /* 智能编号系统 */
     ol.fangsong-list li::before {
-        width: 2.4em;          /* 缩小编号容器 */
-        left: 0.4em;           /* 贴近左侧边缘 */
-        font-size: 0.95em;     /* 动态字号 */
-        font-feature-settings: "tnum", "lnum"; /* 启用旧式数字 */
+        display: none;
     }
 
     /* 段落重构 */
@@ -212,17 +208,14 @@
 /* 手机深度适配 */
 @media screen and (max-width: 480px) {
     ol.fangsong-list li {
-        font-size: 16px;
+        font-size: 0.875rem;
         line-height: 1.7;
         padding-left: 2.4em;  /* 紧凑布局 */
         margin: 1rem 0;
     }
 
     ol.fangsong-list li::before {
-        width: 2.1em;
-        left: 0.3em;
-        font-size: 0.9em;
-        text-align: center;    /* 居中对齐更紧凑 */
+        display: none;
     }
 
     /* 段落移动端优化 */
@@ -253,9 +246,7 @@
     }
 
     ol.fangsong-list li::before {
-        width: 1.9em;
-        left: 0.2em;
-        font-size: 0.85em;
+        display: none;
     }
 
     /* 括号内容处理 */
