@@ -1,0 +1,170 @@
+/* ===== 增强型移动端响应式优化 ===== */
+@media screen and (max-width: 768px) {
+    .post-item {
+        padding: 0.8rem;
+        margin: 0 -0.8rem;
+        border-radius: 0; /* 移除圆角提升空间利用率 */
+    }
+
+    .post-title {
+        font-size: 1.6rem !important;
+        line-height: 1.35; /* 优化行高 */
+        letter-spacing: -0.3px; /* 紧凑字距 */
+        margin: 0.8rem 0 0.6rem;
+    }
+
+    .post-date {
+        font-size: 0.78rem;
+        opacity: 0.9; /* 提升日期可读性 */
+    }
+
+    .fangsong-text {
+        font-size: 0.9375rem;
+        line-height: 1.72; /* 黄金比例行高 */
+        text-indent: 1.5em;
+        margin: 0.8rem 0;
+        hyphens: auto;
+        word-break: break-word; /* 新增安全断词 */
+    }
+
+    .college-table {
+        margin: 1rem -0.8rem;
+        border: 1px solid rgba(0,0,0,0.08); /* 添加边框提升可视性 */
+        background: #f8f9fa; /* 表格背景色 */
+    }
+
+    .college-table table {
+        min-width: 560px;
+        background: white; /* 表格内容反白 */
+    }
+
+    .college-table td, 
+    .college-table th {
+        padding: 0.6rem 0.5rem; /* 左右紧凑 */
+        font-size: 0.8125rem;
+        line-height: 1.5; /* 提升表格行高 */
+    }
+
+    .fangsong-list li {
+        padding-left: 2.2em; /* 优化序号对齐 */
+        text-indent: -2.2em;
+        margin: 0.75rem 0;
+        font-size: 0.9em; /* 列表字体相对单位 */
+    }
+
+    .h2_tem1 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0 0.8rem;
+        padding-bottom: 0.4rem; /* 下划线留白 */
+        border-bottom: 1px solid rgba(0,0,0,0.1); /* 视觉分割线 */
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .post-title {
+        font-size: 1.4rem !important;
+        letter-spacing: -0.4px;
+    }
+
+    .college-table table {
+        min-width: 480px;
+    }
+
+    .college-table td, 
+    .college-table th {
+        padding: 0.55rem 0.45rem;
+        font-size: 0.75rem;
+    }
+
+    /* 增强列表序号 */
+    .fangsong-list li::before {
+        font-size: 0.9em; /* 序号大小适配 */
+        left: -0.2em; /* 微调定位 */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .post-title {
+        font-size: 1.25rem !important;
+        line-height: 1.32;
+        margin: 0.6rem 0;
+    }
+
+    .fangsong-text {
+        font-size: 0.875rem;
+        line-height: 1.75;
+        text-indent: 1.2em;
+        margin: 0.7rem 0;
+    }
+
+    .college-table table {
+        min-width: 400px;
+    }
+
+    .college-table td[rowspan],
+    .college-table th[rowspan] {
+        min-width: 4.2rem; /* 紧凑行合并单元格 */
+        padding: 0.4rem 0.35rem;
+    }
+
+    .fangsong-list li {
+        padding-left: 2em;
+        text-indent: -2em;
+        line-height: 1.68; /* 提升可读性 */
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .post-title {
+        font-size: 1.1rem !important;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+    }
+
+    .fangsong-text {
+        font-size: 0.8125rem;
+        text-indent: 1em;
+        line-height: 1.78;
+        margin: 0.6rem 0;
+    }
+
+    .college-table table {
+        min-width: 320px;
+    }
+
+    /* 超小屏表格优化 */
+    .college-table td, 
+    .college-table th {
+        padding: 0.5rem 0.4rem;
+        font-size: 0.7rem; /* 极限字号 */
+    }
+
+    /* 列表终极优化 */
+    .fangsong-list li {
+        padding-left: 1.8em;
+        text-indent: -1.8em;
+        margin: 0.6rem 0;
+        font-size: 0.85em;
+    }
+}
+
+/* 新增超窄屏适配 */
+@media screen and (max-width: 320px) {
+    .post-title {
+        font-size: 1rem !important; /* 18px */
+    }
+
+    .college-table table {
+        min-width: 300px;
+    }
+
+    .college-table td, 
+    .college-table th {
+        padding: 0.45rem 0.35rem;
+    }
+
+    .fangsong-list li {
+        padding-left: 1.6em;
+        text-indent: -1.6em;
+    }
+}
