@@ -1,0 +1,214 @@
+/* 小红书主题变量 */
+:root {
+  --color-primary: #FF3B6B;    /* 主品牌色 */
+  --color-secondary: #FF8AA6; /* 辅助粉色 */
+  --color-bg: #FFF5F7;       /* 背景浅粉 */
+  --color-text: #333333;      /* 主要文字 */
+  --color-subtext: #666666;   /* 次要文字 */
+  --color-border: rgba(255, 59, 107, 0.2); /* 边框色 */
+}
+
+/* 基础容器 */
+.profile-section {
+  box-sizing: border-box;
+  width:100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 2rem 3rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.375rem 1.5rem rgba(255, 59, 107, 0.08);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-align: left;
+  position: relative;
+}
+/* 按钮容器 */
+.profile-section__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+  font-size: 1.125rem; /* 基准字体18px (16 * 1.125) */
+  }
+
+  /* 按钮字体继承 */
+  button {
+      font-size: inherit; /* 继承容器字体大小 */
+      padding: 0.75em 1.25em; /* 相对单位适配字体变化 */
+  }
+
+/* 按钮样式优化 */
+.profile-section__btn {
+  padding: 10px 20px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: white;
+  color: var(--color-text);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 按钮交互状态 */
+.profile-section__btn:hover {
+  background: rgba(255, 59, 107, 0.06);
+  transform: translateY(-1px);
+}
+
+.profile-section__btn--active {
+  background: var(--color-primary) !important;
+  color: white !important;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(255, 59, 107, 0.2);
+}
+
+/* 分割线优化 */
+.profile-section__divider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--color-border) 50%, 
+    transparent 100%);
+  margin: 24px 0;
+}
+
+/* 内容区块优化 */
+.profile-section__content {
+  display: none;
+  padding: 20px;
+  background: rgba(255, 59, 107, 0.03);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.profile-section__content--active {
+  display: block;
+}
+
+/* 内容条目样式升级 */
+.profile-section__item {
+  margin: 16px 0;
+  padding: 12px 16px 12px 24px;
+  border-left: 3px solid var(--color-primary);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.profile-section__item:hover {
+  transform: translateX(4px);
+}
+
+.profile-section__item::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* 动画定义 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-section__btn .profile-section__content .profile-section__content--active .profile-section__divider .profile-section__item{
+width: 100%; /* 强制宽度与父容器一致 */
+max-width: 100%; /* 防止缩放溢出 */
+margin-left: 0; /* 取消可能存在的偏移 */
+margin-right: 0;
+padding: 0 20px; /* 内间距适配父容器 */
+box-sizing: border-box; /* 包含 padding 计算宽度 */
+}
+
+
+/* 移动端适配 (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .profile-section {
+    min-width: auto !important;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 1.5rem;
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+  }
+
+  /* 按钮容器适配 */
+  .profile-section__btns {
+    gap: 8px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+
+  /* 内容区块优化 */
+  .profile-section__content {
+    padding: 1rem;
+    margin: 0 -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .profile-section__item {
+    margin: 12px 0;
+    padding: 12px;
+    border-left-width: 2px;
+  }
+
+  /* 优化交互效果 */
+  .profile-section__btn:hover {
+    transform: none;
+    background: rgba(255,59,107,0.04);
+  }
+
+  .profile-section__item:hover {
+    transform: translateX(2px);
+  }
+
+  /* 文字尺寸优化 */
+  .profile-section__item::before {
+    width: 6px;
+    height: 6px;
+    left: -2px;
+  }
+}
+
+/* 超小屏幕适配 (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .profile-section {
+    padding: 1rem;
+  }
+
+  .profile-section__btn {
+    flex: 1 2 50%; /* 单列按钮布局 */
+    font-size: 0.9rem;
+  }
+
+  /* 隐藏非必要装饰 */
+  .profile-section__divider {
+    margin: 1rem 0;
+  }
+
+  .profile-section__item::before {
+    display: none;
+  }
+}

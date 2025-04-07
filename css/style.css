@@ -1,0 +1,360 @@
+/* 基础样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: '微软雅黑', 'Helvetica Neue', sans-serif;
+}
+/* 自定义变量（命名空间化） */
+:root {
+  --mm-primary-red: #FF3B30;       /* 主品牌色 */
+  --mm-secondary-bg: #FFF0F0;      /* 辅助背景 */
+  --mm-text-dark: #333333;         /* 主要文字 */
+  --mm-border-color: #EEEEEE;      /* 边框颜色 */
+  --mm-card-shadow: 0 4px 20px rgba(0,0,0,0.08); /* 卡片阴影 */
+}
+body {
+  min-width: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+  font-family:"Times New Roman", Times, 
+  "Microsoft YaHei", "SimHei", 
+  sans-serif;
+  user-select: none;/* 文档防复制 */
+  -webkit-user-select: none;/* 文档防复制 */
+}
+body::after {
+  content: "小红书@呜呜 \A 禁止搬运 | 原创保护"; /* 使用\A换行 */
+  position: fixed;
+  z-index: 9999;
+  bottom: 20px;  /* 右下角定位 */
+  right: 20px;
+  color: rgba(255, 36, 66, 0.5); /* 小红书品牌红透明度15% */
+  pointer-events: none;
+  font: 
+    300 18px/1.5 'PingFang SC', /* 苹方细体 */
+    sans-serif;
+  white-space: pre;
+  text-align: right;
+  text-shadow: 0 2px 3px rgba(255,36,66,0.1);
+  transform: rotate(-5deg); /* 轻微倾斜 */
+  animation: 
+    breath 2s ease-in-out infinite alternate,
+    fadeIn 0.5s ease-out;
+}
+/* 呼吸动画 */
+@keyframes breath {
+  from { opacity: 0.9; }
+  to { opacity: 0.4; }
+}
+
+/* 渐现动画 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 0.9; transform: translateY(0); }
+}
+/* ===== 顶部导航栏 ===== */
+.nav-bar {
+  position: fixed;
+  width:100%;
+  height: 60px;
+  z-index: 1000;
+  background: #2c3e50;  /* 深色背景 */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+/* 左侧个人信息 */
+.personal-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.platform-name {
+  color: #ff6b6b;      /* 小红书风格红色 */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.username {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* 右侧欢迎语 */
+.welcome-text {
+  color: #ecf0f1;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+/* 右侧欢迎语 */
+.welcome-text_tem1 {
+  color: #ecf0f1;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+/* ===== 内容区域 ===== */
+.maincontent_80px{
+  padding-top: 60px;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.post-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.post-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.post-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 小红书风格日期样式 */
+.post-date {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: #FFF0F5;           /* 小红书风格浅粉色背景 */
+  border-radius: 16px;           /* 胶囊形状 */
+  color: #FF3366;                /* 主品牌红色 */
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  font-family: 
+      -apple-system, 
+      "PingFang SC",
+      "Microsoft YaHei",
+      sans-serif;
+  box-shadow: 0 2px 6px rgba(255, 51, 102, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* 日历图标装饰 */
+  &::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF3366" d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/></svg>');
+  }
+}
+
+/* 悬停动效 */
+.post-date:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 51, 102, 0.12);
+  background: #fff;
+}
+
+
+/* 日期格式优化（需配合HTML时间标签） */
+.post-date time {
+  display: flex;
+  gap: 4px;
+  
+  /* 年份样式 */
+  &::after {
+      content: '年';
+      color: #FF99B3;  /* 浅粉色辅助文字 */
+  }
+  
+  /* 月份样式 */
+  & > span:nth-child(2)::after {
+      content: '月';
+      color: #FF99B3;
+  }
+  
+  /* 日样式 */
+  & > span:last-child::after {
+      content: '日';
+      color: #FF99B3;
+  }
+}
+.post-title {
+  /* 布局定位 */
+  position: relative;
+  padding: 12px 20px 12px 56px; /* 左侧留出色块空间 */
+  margin: 24px 0;
+  
+  /* 色块设计 */
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(255, 51, 102, 0.1); /* 小红书风格阴影 */
+  
+  /* 主色装饰线 */
+  &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 4px;
+      background: #FF3366; /* 小红书品牌红色 */
+      border-radius: 2px;
+  }
+
+  /* 字体样式 */
+  font: 700 24px/1.3 
+      -apple-system, 
+      "PingFang SC",
+      "Microsoft YaHei",
+      sans-serif;
+  color: #1A1A1A; /* 小红书深灰色 */
+  letter-spacing: -0.5px;
+  
+  /* 交互效果 */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .post-title:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 51, 102, 0.15);
+    
+    &::before {
+        width: 6px;
+        background: #FF6699; /* 悬停色变浅 */
+    }
+  }
+
+.post-excerpt {
+  color: #555;
+  line-height: 2;
+}
+
+/* ===== 底部版权 ===== */
+.footer {
+  background: #2c3e50;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+}
+/* 设置 footer 内所有超链接的样式 */
+.footer a {
+  color: white; /* 超链接字体颜色为白色 */
+  text-decoration: none; /* 去掉下划线 */
+  margin: 0 10px; /* 超链接之间的间距 */
+}
+
+/* 设置鼠标悬停时超链接的样式 */
+.footer a:hover {
+  color: #ccc; /* 鼠标悬停时字体颜色变为浅灰色 */
+}
+
+.contact-info {
+margin-top: 0.5rem;
+font-size: 0.9rem;
+}
+
+/* 打印专用样式（不溢出屏幕） */
+@media print {
+  .nav-bar {
+    position: static !important;
+    z-index: -9999 !important;
+  }
+  .maincontent_80px {
+    padding-top: 0 !important;
+}
+  @page {
+    size: auto;        /* 自动适应纸张尺寸 */
+    margin: 0;         /* 完全消除默认页边距 */
+  }
+
+  body {
+    min-width: auto !important;
+    width: 100% !important;
+    margin: 0 !important;       /* 消除内容边距 */
+    display: block !important;
+    font-size: 12pt !important;
+    -webkit-print-color-adjust: exact; /* 强制显示颜色 */
+    color-adjust: exact;        /* 标准属性 */
+  }
+
+  /* 隐藏非必要元素 */
+  .no-print {
+    display: none !important;
+  }
+
+  /* 分页优化 */
+  .print-section {
+    page-break-inside: avoid;
+  }
+
+  /* 允许分页 */
+  html, article {
+    page-break-before: auto;
+    page-break-after: auto;
+  }
+
+  /* 保证页眉页脚内容可见 */
+  header, footer {
+    display: block !important;
+    position: static;
+    background: inherit;
+  }
+}
+
+
+/* ===== 响应式适配 ===== */
+@media (max-width: 1200px) {
+  body { min-width: auto; }
+  
+  /* 内容区域优化 */
+  .content {
+    padding: 2rem 1.5rem;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 992px) {
+  /* 导航栏紧凑模式 */
+  .nav-bar {
+    padding: 0 1.5rem;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 移动端导航布局 */
+  .nav-bar {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+  
+  .personal-info {
+    flex: 1;
+    min-width: 0;  /* 允许内容收缩 */
+  }
+  
+  .platform-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+  
+  /* 内容优化 */
+  .post-list {
+    grid-template-columns: 1fr;
+  }
+}

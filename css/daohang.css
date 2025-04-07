@@ -1,0 +1,50 @@
+.ministerial-nav {
+  background: #2c3e50; /* 图片同款深蓝导航栏 */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .nav-link {
+    color: rgba(255,255,255,0.95);
+    padding: 14px 0;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background: rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding: 14px 15px;
+  }
+  
+  .nav-link.active {
+    color: #ffd700;
+  }
+  
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    background: #ffd700;
+  }
+  
+  /* 政务布局 */
+  .gov-layout {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    padding: 0 20px;
+  }

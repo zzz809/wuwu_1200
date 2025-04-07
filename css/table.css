@@ -1,0 +1,68 @@
+
+/* ================= 表格全局样式 ================= */
+.college-table {
+  margin: 2rem auto;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+}
+
+.center-table {
+  text-align: center;
+}
+
+/* ================= 基础表格结构 ================= */
+table {
+  font-family: 
+        'MyTimes',
+        'Times New Roman',
+        'MyFangSong',         /* 自定义字体 */
+        '仿宋',               /* Windows系统字体 */
+        'FangSong',           /* macOS系统字体 */
+        'STFangsong',         /* 其他系统变体 */
+        serif;                /* 通用衬线字体 */
+    font-size: 20px;
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  position: relative;
+}
+
+th {
+  font-family: 
+        'MyTimes',
+        'Times New Roman',
+        'MyFangSong',         /* 自定义字体 */
+        '仿宋',               /* Windows系统字体 */
+        'FangSong',           /* macOS系统字体 */
+        'STFangsong',         /* 其他系统变体 */
+        serif;                /* 通用衬线字体 */
+    font-size: 20px;
+  background: #f8f9fa;
+  font-weight: 600;
+  padding: 12px 15px;
+  border-bottom: 2px solid #e9ecef;
+  text-align: center;
+}
+
+td {
+  font-family: 
+        'MyTimes',
+        'Times New Roman',
+        'MyFangSong',         /* 自定义字体 */
+        '仿宋',               /* Windows系统字体 */
+        'FangSong',           /* macOS系统字体 */
+        'STFangsong',         /* 其他系统变体 */
+        serif;                /* 通用衬线字体 */
+  padding: 12px 15px;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  text-align: center;
+}
+
+tr:hover td {
+  background-color: #f8f9fa;
+}

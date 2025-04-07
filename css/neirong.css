@@ -1,0 +1,133 @@
+/* ===== 极致紧凑政策列表 ===== */
+.policy-container {
+    max-width: 1200px;
+    margin: 1.2rem auto;
+    padding: 0 1rem;
+  }
+  
+  /* 面包屑导航优化 */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 0.8rem 0 1rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.82em;
+    color: #666;
+    background: rgba(255,255,255,0.9);
+    border-radius: 4px;
+  }
+  
+  .breadcrumb a {
+    color: #FF3B30;
+    padding: 0.2rem 0.6rem;
+    text-decoration: none; /* 始终无下划线 */
+    transition: all 0.25s ease;
+  }
+  
+  .breadcrumb a:hover {
+    background: rgba(255,59,48,0.06);
+    text-decoration: none; /* 确保悬停无下划线 */
+  }
+  
+  /* 紧凑分类容器 */
+  .policy-category {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(255,59,48,0.1);
+    border-radius: 6px;
+  }
+  
+  .category-title {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+  
+  .category-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 25%;
+    height: 2px;
+    background: linear-gradient(90deg, #FF3B30 0%, transparent 100%);
+  }
+  
+  /* 超紧凑卡片布局 */
+  .policy-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+  
+  .policy-card {
+    background: #fff;
+    border: 1px solid rgba(255,59,48,0.1);
+    border-radius: 5px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .policy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,59,48,0.08);
+  }
+  
+  /* 日期区块优化 */
+  .date-box {
+    background: rgba(255,59,48,0.04);
+    border: 1px solid rgba(255,59,48,0.08);
+    border-radius: 4px;
+    padding: 0.6rem;
+    text-align: center;
+  }
+  
+  .year {
+    font-size: 1rem;
+    color: #FF3B30;
+    margin-bottom: 2px;
+  }
+  
+  .month-day {
+    font-size: 0.78rem;
+    color: #666;
+    display: flex; /* 新增flex布局 */
+    justify-content: center;
+    gap: 4px;
+  }
+  
+  /* 移动端紧凑时间显示 */
+  @media (max-width: 768px) {
+    .policy-card {
+      grid-template-columns: 1fr;
+      padding: 0.8rem;
+    }
+    
+    .date-box {
+      width: 100%;
+      padding: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .year {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    
+    .month-day {
+      font-size: 0.75rem;
+      gap: 3px;
+    }
+    
+    .month-day span:not(:last-child)::after {
+      content: "·";
+      margin-left: 2px;
+    }
+  }
