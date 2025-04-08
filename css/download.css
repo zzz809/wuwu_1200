@@ -159,24 +159,34 @@
     text-overflow: ellipsis;
 }
 
-/* 移动端优化样式 */
+/* 移动端优化样式-防溢出完整版 */
 @media (max-width: 768px) {
     .download-container {
-        margin: 12px;
+        margin: 0;  /* 移除外边距 */
         padding: 12px;
-        border-radius: 8px;
+        width: 100vw;  /* 强制全屏宽度 */
+        box-sizing: border-box;  /* 包含内边距 */
+        border: none;
+        border-radius: 0;  /* 移除圆角 */
         box-shadow: none;
-        border: 1px solid #eee;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);  /* 精准居中 */
     }
 
     .list-title {
         font-size: 18px;
-        margin-bottom: 16px;
-        padding-bottom: 6px;
+        margin: 0 0 16px;
+        padding: 0 0 6px;
+        width: calc(100% - 24px);  /* 防溢出 */
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;  /* 标题过长处理 */
     }
 
     .file-list {
         gap: 8px;
+        width: 100%;
     }
 
     .file-item {
@@ -186,16 +196,26 @@
         margin: 0;
         border: 1px solid #f0f0f0;
         background: #fff;
+        width: 100%;  /* 强制占满容器 */
+        box-sizing: border-box;  /* 重要 */
+        min-height: 56px;  /* 最小触摸高度 */
+        overflow: hidden;  /* 隐藏意外溢出 */
     }
-    .file-item::before{
+
+    .file-item::before {
         display: none;
     }
+
     .file-number {
         min-width: auto;
+        max-width: 60px;  /* 限制编号宽度 */
         font-size: 12px;
         padding: 4px 8px;
         background: #ffeceb;
-        margin: 0 0 8px 0;
+        margin: 0 0 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;  /* 长编号处理 */
+        white-space: nowrap;
     }
 
     .file-name {
@@ -203,38 +223,48 @@
         padding-left: 0;
         font-size: 14px;
         margin-bottom: 4px;
+        display: -webkit-box;  /* 多行省略备用方案 */
+        -webkit-line-clamp: 2;  /* 最多显示两行 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;  /* 行高优化 */
     }
 
     .file-name::before {
-        display: none; /* 移除竖线装饰 */
+        display: none;
     }
 
-    /* 新增文件类型样式 */
     .file-type {
         font-size: 12px;
         color: #666;
         padding: 2px 6px;
         background: #f5f5f5;
         border-radius: 4px;
+        max-width: 100%;  /* 防溢出 */
+        word-break: break-word;  /* 强制换行 */
+        display: inline-block;
     }
 
-    /* 简化交互效果 */
     .file-item:active {
         background: #fff5f5;
         transform: scale(0.98);
     }
 
-    /* 替换箭头为简单符号 */
     .file-item::after {
         display: none;
     }
 
-    /* 移除PC端hover效果 */
-    .file-item:hover,
-    .file-item:hover::before,
-    .file-item:hover .file-number {
-        transform: none;
-        background: initial;
-        opacity: 1;
+    /* 横屏优化 */
+    @media (orientation: landscape) {
+        .file-name {
+            -webkit-line-clamp: 1;  /* 横屏单行显示 */
+            max-width: 70%;
+        }
+        .file-type {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+        }
     }
 }
