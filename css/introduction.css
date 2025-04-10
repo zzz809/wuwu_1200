@@ -66,8 +66,9 @@
 /* 移动端适配 */
 @media (max-width: 768px) {
     .material-guide {
-        margin: 20px;
+        margin: 15px auto;  /* 关键修改 */
         padding: 20px;
+        width: calc(100% - 30px); /* 防止溢出 */
     }
 
     .guide-item {
