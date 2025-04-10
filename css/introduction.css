@@ -1,0 +1,92 @@
+/* 容器样式 */
+.material-guide {
+    max-width: 1200px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255,59,48,0.08);
+}
+
+/* 标题样式 */
+.guide-title {
+    color: #FF3B30;
+    font-size: 24px;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #FFEBEE;
+}
+
+/* 条目列表 */
+.guide-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: #FFF5F5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.guide-item:hover {
+    transform: translateX(10px);
+    box-shadow: 2px 2px 12px rgba(255,59,48,0.1);
+}
+
+/* 数字徽章 */
+.item-number {
+    width: 32px;
+    height: 32px;
+    background: #FF3B30;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+/* 内容区域 */
+.item-content h3 {
+    color: #FF3B30;
+    margin: 0 0 8px 0;
+    font-size: 18px;
+}
+
+.item-content p {
+    color: #666;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .material-guide {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .guide-item {
+        padding: 15px;
+        margin-bottom: 12px;
+    }
+
+    .item-number {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+        margin-right: 15px;
+    }
+
+    .item-content h3 {
+        font-size: 16px;
+    }
+
+    .item-content p {
+        font-size: 14px;
+    }
+}
