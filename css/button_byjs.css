@@ -16,6 +16,13 @@
     font-size: 14px;
     color: #666;
     position: relative;
+     /* 新增以下属性 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   
   /* 小红主题激活状态 */
@@ -102,5 +109,41 @@
     
     .filter-buttons {
       gap: 6px;
+    }
+  }
+
+
+
+
+
+
+
+
+  @media (max-width: 768px) {
+    .filter-btn {
+      flex: 1 0 calc(25% - 8px); /* 默认4列 */
+      min-width: 100px;
+      padding: 6px 8px;
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .filter-btn {
+      flex-basis: calc(33.3% - 8px); /* 3列 */
+      min-width: 90px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .filter-btn {
+      flex-basis: calc(50% - 6px); /* 2列 */
+      min-width: 80px;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .filter-btn {
+      flex-basis: 100%; /* 单列 */
     }
   }
