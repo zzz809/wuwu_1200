@@ -127,14 +127,6 @@
       font-size: 12px;
     }
   }
-  
-  @media (max-width: 640px) {
-    .filter-btn {
-      flex-basis: calc(33.3% - 8px); /* 3列 */
-      min-width: 90px;
-    }
-  }
-  
   @media (max-width: 480px) {
     .filter-btn {
       flex-basis: calc(50% - 6px); /* 2列 */
