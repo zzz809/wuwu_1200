@@ -111,31 +111,3 @@
       gap: 6px;
     }
   }
-
-
-
-
-
-
-
-
-  @media (max-width: 768px) {
-    .filter-btn {
-      flex: 1 0 calc(25% - 8px); /* 默认4列 */
-      min-width: 100px;
-      padding: 6px 8px;
-      font-size: 12px;
-    }
-  }
-  @media (max-width: 480px) {
-    .filter-btn {
-      flex-basis: calc(50% - 6px); /* 2列 */
-      min-width: 80px;
-    }
-  }
-  
-  @media (max-width: 360px) {
-    .filter-btn {
-      flex-basis: 100%; /* 单列 */
-    }
-  }
