@@ -224,7 +224,7 @@
         font-size: 14px;
         margin-bottom: 4px;
         display: -webkit-box;  /* 多行省略备用方案 */
-        -webkit-line-clamp: 3;  /* 最多显示3行 */
+        -webkit-line-clamp: 4;  /* 最多显示4行 */
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
